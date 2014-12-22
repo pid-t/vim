@@ -17,6 +17,8 @@ Plugin 'Lokaltog/vim-powerline'
 " emmet
 Plugin 'mattn/emmet-vim'
 
+Plugin 'scrooloose/nerdtree'
+
 behave mswin
 
 call vundle#end()            " required
@@ -24,6 +26,9 @@ filetype plugin indent on    " required
 
 set background=dark
 colorscheme solarized
+
+set smarttab
+set smartindent
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -115,6 +120,11 @@ set smarttab
 set foldenable                                        "启用折叠
 set foldmethod=manual 
 set laststatus=2
+
+map <F3> :NERDTreeToggle<CR>
+imap <F3> <ESC> :NERDTreeToggle<CR>                  "打开树状文件目录  
+map <C-F3> \be
+
 autocmd FileType * set tabstop=2|set shiftwidth=2|set expandtab
 autocmd FileType php set tabstop=4|set shiftwidth=4|set noexpandtab
 let g:user_emmet_install_global = 0
